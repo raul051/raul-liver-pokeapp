@@ -69,6 +69,6 @@ La aplicación estará disponible en:
 
 ---
 
-**Autor:** Tu Nombre
+**URL:** https://prueba-frontend-d9730.web.app/login
 
 **Licencia:** MIT
