@@ -1,6 +1,7 @@
 .pokemon-grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   max-width: 80%;
   margin: 0 auto;
@@ -15,10 +16,26 @@
   color: black;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   width: 100%;
-  max-width: 250px;
+  max-width: 340px;
   display: flex;
+  justify-content: space-between;
+  .pokemon-info{
+    h3{
+      font-size: 1.5rem;
+      color: white;
+    }
+    p{
+      font-size: 1rem;
+      color: white;
+      background-color: rgba(226, 226, 226, 0.404);
+      padding: 5px;
+      border-radius: 20px;
+    }
+  }
 }
 
 .pokemon-card:hover {
-  background: #e0e0e0;
+ img{
+  scale: 1.5;
+ }
 }

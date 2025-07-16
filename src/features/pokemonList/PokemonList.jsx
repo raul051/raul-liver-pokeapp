@@ -8,6 +8,11 @@ const PokemonList = () => {
   const dispatch = useDispatch();
   const pokemons = useSelector((state) => state.pokedex.pokemons);
   const status = useSelector((state) => state.pokedex.status);
+  const searchTerm = useSelector((state) => state.search.term);
+
+  const filteredPokemons = pokemons.filter((pokemon) =>
+    pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   useEffect(() => {
     if (status === "idle") {
@@ -35,13 +40,13 @@ const PokemonList = () => {
       case "normal":
         return "#A8A878";
       default:
-        return "#f4f4f4";
+        return "#A8A878";
     }
   }
 
   return (
     <div className="pokemon-grid">
-      {pokemons.map((pokemon) => (
+      {filteredPokemons.map((pokemon) => (
         <Link
           key={pokemon.id}
           to={`/detail/${pokemon.name}`}
@@ -50,8 +55,8 @@ const PokemonList = () => {
         >
           <div className="pokemon-info">
             <h3>{pokemon.name.toUpperCase()}</h3>
-            <p>Tipo: {pokemon.types[0]}</p>
-            <p>ID: {pokemon.id}</p>
+            <p><strong>Tipo: </strong>{pokemon.types[0]}</p>
+            <p><strong>ID: </strong>{pokemon.id}</p>
           </div>
           <img src={pokemon.image} alt={pokemon.name} />
         </Link>
