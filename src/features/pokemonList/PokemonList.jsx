@@ -15,10 +15,10 @@ const PokemonList = () => {
   );
 
   useEffect(() => {
-    if (status === "idle") {
-      dispatch(fetchPokemons());
+    if (pokemons.length === 0) {
+      dispatch(fetchPokemons(0));
     }
-  }, [status, dispatch]);
+  }, [pokemons.length, dispatch]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,9 +34,6 @@ const PokemonList = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [status, pokemons.length, dispatch]);
-
-  if (status === "loading") return <p>Cargando Pokédex...</p>;
-  if (status === "failed") return <p>Error al cargar Pokédex.</p>;
 
   function getColorByType(type) {
     switch (type) {
@@ -60,29 +57,42 @@ const PokemonList = () => {
   }
 
   return (
-    <div className="pokemon-grid">
-      {filteredPokemons.map((pokemon) => (
-        <Link
-          key={pokemon.id}
-          to={`/detail/${pokemon.name}`}
-          className="pokemon-card"
-          style={{ backgroundColor: getColorByType(pokemon.types[0]) }}
-        >
-          <div className="pokemon-info">
-            <h3>{pokemon.name.toUpperCase()}</h3>
-            <p>
-              <strong>Tipo: </strong>
-              {pokemon.types[0]}
-            </p>
-            <p>
-              <strong>ID: </strong>
-              {pokemon.id}
-            </p>
-          </div>
-          <img src={pokemon.image} alt={pokemon.name} />
-        </Link>
-      ))}
-    </div>
+    <>
+      <div className="pokemon-grid">
+        {filteredPokemons.map((pokemon) => (
+          <Link
+            key={pokemon.id}
+            to={`/detail/${pokemon.name}`}
+            className="pokemon-card"
+            style={{ backgroundColor: getColorByType(pokemon.types[0]) }}
+          >
+            <div className="pokemon-info">
+              <h3>{pokemon.name.toUpperCase()}</h3>
+              <p>
+                <strong>Tipo: </strong>
+                {pokemon.types[0]}
+              </p>
+              <p>
+                <strong>ID: </strong>
+                {pokemon.id}
+              </p>
+            </div>
+            <img src={pokemon.image} alt={pokemon.name} />
+          </Link>
+        ))}
+      </div>
+
+      {status === "loading" && (
+        <div className="loader">
+          <p>Cargando más Pokémon...</p>
+        </div>
+      )}
+      {status === "failed" && (
+        <div className="loader">
+          <p>Error al cargar Pokédex.</p>
+        </div>
+      )}
+    </>
   );
 };
 

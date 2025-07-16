@@ -7,14 +7,8 @@ import MainLayout from "./layouts/MainLayout";
 function App() {
   return (
     <Routes>
-      <Route
-        path="/"
-        element={
-          <MainLayout showSearchBar={true}>
-            <PokemonList />
-          </MainLayout>
-        }
-      />
+      <Route path="/" element={<MainLayout showSearchBar={true}><PokemonList /></MainLayout>} />
+
       <Route
         path="/detail/:pokemonName"
         element={

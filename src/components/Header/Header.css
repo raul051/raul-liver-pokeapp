@@ -1,0 +1,33 @@
+.header {
+  background-color: transparent;
+  color: black;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.header-content {
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.app-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  opacity: 0.8;
+}
