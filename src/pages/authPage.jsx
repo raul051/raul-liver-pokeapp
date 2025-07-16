@@ -2,6 +2,19 @@ import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import "./authPage.css";
+/**
+ * Componente AuthPage para la autenticación de usuarios (inicio de sesión y registro).
+ *
+ * Renderiza un formulario que permite a los usuarios iniciar sesión o registrarse usando su correo electrónico y contraseña.
+ * Gestiona el envío del formulario, muestra errores y permite alternar entre los modos de inicio de sesión y registro.
+ *
+ * @component
+ *
+ * @example
+ * <Route path="/auth" element={<AuthPage />} />
+ *
+ * @returns {JSX.Element} Interfaz de la página de autenticación.
+ */
 const AuthPage = () => {
   const { login, register } = useAuth();
   const [isLogin, setIsLogin] = useState(true);

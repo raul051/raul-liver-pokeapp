@@ -1,8 +1,22 @@
+
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPokemons } from "../pokedexSlice";
 import { Link } from "react-router-dom";
 import "./PokemonList.css";
+
+/**
+ * Componente que muestra una lista de Pokémon en una cuadrícula.
+ * 
+ * - Obtiene la lista de Pokémon y el estado de carga desde el store de Redux.
+ * - Filtra los Pokémon según el término de búsqueda.
+ * - Implementa carga infinita al hacer scroll.
+ * - Cada tarjeta de Pokémon muestra su nombre, tipo, ID e imagen.
+ * - El color de fondo de la tarjeta depende del tipo principal del Pokémon.
+ * 
+ * @component
+ * @returns {JSX.Element} Elemento JSX que representa la lista de Pokémon.
+ */
 
 const PokemonList = () => {
   const dispatch = useDispatch();

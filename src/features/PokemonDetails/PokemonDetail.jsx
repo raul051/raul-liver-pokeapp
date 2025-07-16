@@ -4,6 +4,21 @@ import axios from "axios";
 import "./PokemonDetail.css";
 import {getColorByType} from "../../helpers/getColorByType";
 
+/**
+ * Componente que muestra los detalles de un Pokémon específico.
+ *
+ * Obtiene la información del Pokémon desde la API de PokeAPI usando el nombre proporcionado en la URL.
+ * Muestra información básica como nombre, número, tipos, imagen, altura, peso y estadísticas.
+ *
+ * @component
+ * @returns {JSX.Element} Elemento JSX que representa la tarjeta de detalle del Pokémon.
+ *
+ * @example
+ * <PokemonDetail />
+ *
+ * @see https://pokeapi.co/
+ */
+
 const PokemonDetail = () => {
   const { pokemonName } = useParams();
   const [pokemon, setPokemon] = useState(null);
