@@ -1,8 +1,9 @@
 .pokemon-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
-  padding: 1rem;
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 .pokemon-card {
@@ -13,6 +14,9 @@
   text-decoration: none;
   color: black;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 250px;
+  display: flex;
 }
 
 .pokemon-card:hover {
