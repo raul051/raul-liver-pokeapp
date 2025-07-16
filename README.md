@@ -8,7 +8,6 @@ Aplicación web desarrollada con React y Firebase Authentication para consultar 
 
 - Node.js >= 16.x
 - npm >= 9.x
-- Tener configurado un proyecto de Firebase si deseas usar el login
 
 ---
 
@@ -27,12 +26,7 @@ Aplicación web desarrollada con React y Firebase Authentication para consultar 
  npm install
 ```
 
-### 3️⃣ Configurar Firebase Authentication
-
-- Crea un archivo `src/firebaseConfig.js` con tus credenciales de Firebase.
-- Configura en Firebase Authentication el método Email/Password.
-
-### 4️⃣ Levantar el servidor de desarrollo
+### 3️⃣ Levantar el servidor de desarrollo
 
 ```bash
  npm start
@@ -63,5 +57,3 @@ La aplicación estará disponible en:
 ---
 
 **URL:** https://prueba-frontend-d9730.web.app/login
-
-**Licencia:** MIT
