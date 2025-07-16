@@ -31,3 +31,18 @@
 .back-button:hover {
   opacity: 0.8;
 }
+
+.logout-button {
+  background: none;
+  border: 1px solid red;
+  padding: 0.5rem 1rem;
+  color: red;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.logout-button:hover {
+  background-color: red;
+  color: white;
+}
