@@ -1,0 +1,20 @@
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.pokemon-card {
+  background: #f4f4f4;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.pokemon-card:hover {
+  background: #e0e0e0;
+}

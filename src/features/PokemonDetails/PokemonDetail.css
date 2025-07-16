@@ -1,0 +1,14 @@
+.pokemon-detail {
+  padding: 2rem;
+  text-align: center;
+}
+
+.pokemon-detail img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.pokemon-detail p {
+  margin: 0.5rem 0;
+}
