@@ -20,6 +20,21 @@ const PokemonList = () => {
     }
   }, [status, dispatch]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (
+        window.innerHeight + window.scrollY >=
+          document.body.offsetHeight - 100 &&
+        status !== "loading"
+      ) {
+        dispatch(fetchPokemons(pokemons.length));
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [status, pokemons.length, dispatch]);
+
   if (status === "loading") return <p>Cargando Pokédex...</p>;
   if (status === "failed") return <p>Error al cargar Pokédex.</p>;
 
@@ -55,8 +70,14 @@ const PokemonList = () => {
         >
           <div className="pokemon-info">
             <h3>{pokemon.name.toUpperCase()}</h3>
-            <p><strong>Tipo: </strong>{pokemon.types[0]}</p>
-            <p><strong>ID: </strong>{pokemon.id}</p>
+            <p>
+              <strong>Tipo: </strong>
+              {pokemon.types[0]}
+            </p>
+            <p>
+              <strong>ID: </strong>
+              {pokemon.id}
+            </p>
           </div>
           <img src={pokemon.image} alt={pokemon.name} />
         </Link>

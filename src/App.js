@@ -1,29 +1,29 @@
-import './App.css';
-import { Routes, Route } from 'react-router-dom';
-
-import PokemonList from './features/pokemonList/PokemonList';
-import PokemonDetail from './features/PokemonDetails/PokemonDetail';
-import Header from './components/Header/Header';
-import SearchBar from './components/SearchBar/SearchBar'
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import PokemonList from "./features/pokemonList/PokemonList";
+import PokemonDetail from "./features/PokemonDetails/PokemonDetail";
+import MainLayout from "./layouts/MainLayout";
 
 function App() {
   return (
-    <>
-      <Header />
-
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <SearchBar />
-              <PokemonList />
-            </>
-          }
-        />
-        <Route path="/detail/:pokemonName" element={<PokemonDetail />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <MainLayout showSearchBar={true}>
+            <PokemonList />
+          </MainLayout>
+        }
+      />
+      <Route
+        path="/detail/:pokemonName"
+        element={
+          <MainLayout>
+            <PokemonDetail />
+          </MainLayout>
+        }
+      />
+    </Routes>
   );
 }
 
