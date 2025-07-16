@@ -17,8 +17,8 @@ Aplicación web desarrollada con React y Firebase Authentication para consultar 
 ### 1️⃣ Clonar el repositorio
 
 ```bash
- git clone https://github.com/tu-repositorio/pokedex-liverpool.git
- cd pokedex-liverpool
+ git clone https://github.com/raul051/raul-liver-pokeapp.git
+ cd raul-liver-pokeapp
 ```
 
 ### 2️⃣ Instalar dependencias
@@ -59,13 +59,6 @@ La aplicación estará disponible en:
 - `/src/context` → Contexto de autenticación.
 - `/src/features` → Funcionalidades de Pokédex.
 - `/public` → Archivos estáticos.
-
----
-
-## Consideraciones finales
-
-- Asegúrate de configurar las reglas de seguridad de Firebase si implementas login.
-- El proyecto es solo para fines educativos y de prueba.
 
 ---
 
